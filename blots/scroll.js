@@ -51,8 +51,8 @@ class Scroll extends ScrollBlot {
         last.children.head instanceof Break ? null : last.children.head;
       first.moveChildren(last, ref);
       first.remove();
+      this.optimize();
     }
-    this.optimize();
   }
 
   enable(enabled = true) {
@@ -82,10 +82,10 @@ class Scroll extends ScrollBlot {
         const embed = this.scroll.create(value, def);
         this.appendChild(embed);
       }
+      this.optimize();
     } else {
       super.insertAt(index, value, def);
     }
-    this.optimize();
   }
 
   insertBefore(blot, ref) {
