@@ -234,6 +234,7 @@ class Selection {
     indexes.forEach((index, i) => {
       index = Math.min(scrollLength - 1, index);
       let node, [leaf, offset] = this.scroll.leaf(index);
+      if (!leaf || !leaf.position) return;
       [node, offset] = leaf.position(offset, i !== 0);
       args.push(node, offset);
     });
