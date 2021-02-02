@@ -80,6 +80,7 @@
   },
   "scripts": {
     "prepare": "npm run build",
+    "prepack": "yarn build",
     "build": "webpack --config _develop/webpack.config.js; rm dist/quill.core dist/quill.bubble dist/quill.snow;",
     "build:release": "./_develop/scripts/release.sh",
     "start": "npm run build; bundle exec foreman start -f _develop/procfile",
